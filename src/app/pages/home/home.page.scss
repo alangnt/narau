@@ -1,0 +1,99 @@
+main {
+    @apply flex flex-col place-self-center gap-4 w-2/3;
+
+    .hero {
+        @apply h-[400px] w-full border-2 border-[var(--principal)] bg-cover;
+        background-image: url("/assets/hero.png");
+    }
+
+    .principalSection {
+        @apply flex max-sm:flex-col justify-evenly;
+
+        article {
+            @apply flex flex-col items-center justify-between gap-2 text-center w-full border-[var(--principal)] p-4;
+        }
+    }
+
+    .secondarySection {
+        @apply flex max-sm:flex-col gap-4 mb-12;
+
+        .wordOfTheDay {
+            @apply flex flex-col gap-1 w-full max-sm:border-b-2 border-[var(--principal)] max-sm:pb-4;
+
+            h4 {
+                @apply text-xl max-sm:text-center;
+            }
+
+            p {
+                @apply max-sm:text-center;
+            }
+        }
+
+        .training {
+            @apply flex flex-col max-sm:gap-4 justify-between w-full;
+
+            button {
+                @apply flex max-sm:self-center w-fit;
+            }
+        }
+        
+
+        h3 {
+            @apply text-4xl font-semibold text-[var(--secondary)] max-sm:text-center;
+        }
+    }
+
+    .trainingMenu {
+        @apply fixed flex items-center justify-center w-screen h-screen bottom-0 left-0 bg-white/20 backdrop-blur-md z-10;
+
+        article {
+            @apply flex max-sm:flex-col items-center justify-between w-[80%] h-[80%] border-2 border-[var(--principal)] relative bg-[var(--bg-color)];
+            background-image: var(--bg-filter);
+
+            .closeMenu {
+                @apply flex items-center justify-center w-8 h-8 border-2 border-black rounded-full bg-white hover:bg-red-500 duration-200 transition-all absolute top-4 right-4 z-20;
+            }
+
+            .trainingCover {
+                @apply w-full sm:w-1/5 h-1/5 sm:h-full;
+                background-image: url(/assets/training.png)
+            }
+
+            .middlePart {
+                @apply flex flex-col gap-8;
+
+                .randomKana {
+                    @apply flex items-center justify-center text-[100px] border-2 border-[var(--principal)] w-[150px] h-[150px] bg-white;
+                }
+    
+                .choices {
+                    @apply grid grid-cols-2 gap-4;
+    
+                    button {
+                        @apply px-8 py-2 text-xl w-12 h-12;
+                    }
+                }
+    
+                .answers {
+                    @apply flex flex-col gap-4;
+    
+                    p {
+                        @apply text-3xl;
+                    }
+    
+                    button {
+                        @apply w-fit place-self-center;
+                    }
+                }
+            }
+        }
+    }
+    
+    .btn {
+        @apply flex justify-center border-2 border-[var(--principal)] p-2 hover:bg-white/20 duration-200 transition-all cursor-pointer;
+    }
+
+    h2 {
+        @apply text-2xl font-semibold text-[var(--principal)] max-sm:text-center;
+    }
+}

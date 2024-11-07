@@ -1,0 +1,17 @@
+<main>
+  <section class="header">
+    <div class="title">
+      <h2 >平仮名&mdash;hiragana</h2>
+      <a routerLink="/katakana">learn 片仮名&mdash;katakana</a>
+    </div>
+
+    <a href="/assets/pdf/hiragana.pdf" target="_blank" class="btn">download</a>
+  </section>
+    
+  <section class="kana">
+    <article *ngFor="let kana of getHiraganaEntries()">
+      <h3 *ngIf="!['hide1', 'hide2', 'hide3', 'hide4', 'hide5'].includes(kana.key)">{{ kana.key }}</h3>
+      <p>{{ kana.value }}</p>
+    </article>
+  </section>
+</main>

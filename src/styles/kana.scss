@@ -1,0 +1,35 @@
+main {
+    @apply flex flex-col gap-8 mt-6 w-2/3 place-self-center;
+
+    .header {
+        @apply flex max-sm:flex-col max-sm:items-center max-sm:gap-2 max-sm:text-center justify-between;
+
+        .title {
+            @apply flex max-md:flex-col max-sm:items-center gap-1 items-baseline;
+    
+            h2 {
+                @apply text-2xl font-semibold;
+            }
+    
+            a {
+                @apply text-sm hover:font-semibold hover:underline duration-100 transition-all cursor-pointer;
+            }
+        }
+    }
+
+    .kana {
+        @apply grid grid-cols-5 gap-2 mb-12;
+
+        article {
+            @apply flex flex-col items-center place-self-center hover:scale-105 hover:font-semibold hover:text-[#558683] duration-200 transition-all cursor-pointer w-min;
+        
+            h3 {
+                @apply text-3xl font-semibold;
+            }
+        }
+    }
+
+    .btn {
+        @apply flex justify-center w-fit h-fit border-2 border-[var(--principal)] p-2 hover:bg-white/20 duration-200 transition-all cursor-pointer;
+    }
+}

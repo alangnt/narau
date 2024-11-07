@@ -1,0 +1,47 @@
+header {
+    @apply flex justify-between place-self-center max-md:px-6 py-2 w-full md:w-2/3;
+
+    .home {
+        @apply flex gap-1 items-center;
+
+        h1 {
+            @apply flex items-center justify-center text-white font-semibold bg-[var(--principal)] rounded-full w-8 h-8;
+        }
+
+        p {
+            @apply text-xl;
+        }
+    }
+
+    .desktop-navbar {
+        @apply flex gap-4 max-sm:hidden self-center;
+    }
+
+    .mobile-navbar {
+        @apply flex self-center sm:hidden;
+
+        button {
+            @apply flex items-center justify-center rounded-full w-8 h-8;
+        }
+
+        .open-menu {
+            @apply text-white font-semibold bg-[var(--principal)];
+        }
+
+        nav {
+            @apply flex-col gap-4 fixed w-screen h-screen bottom-0 left-0 bg-white/20 backdrop-blur-md z-20;
+
+            .close-menu {
+                @apply border-2 border-black hover:bg-red-700 duration-200 transition-all absolute top-8 right-16;
+            }
+
+            div {
+               @apply flex flex-col justify-center h-full gap-8 font-semibold text-center text-xl; 
+            }
+        }
+    }
+
+    .navLink {
+        @apply hover:underline duration-200 transition-all;
+    }
+}

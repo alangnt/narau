@@ -1,0 +1,74 @@
+<main>
+  <section class="hero"></section>
+
+  <section class="principalSection">
+    <article class="sm:border-y-2">
+      <div>
+        <h2>仮名&mdash;hiragana</h2>
+        <p>Master the basic Japanese syllabary</p>
+      </div>
+      <a class="btn" routerLink="/hiragana">Start Learning</a>
+    </article>
+
+    <article class="border-y-2">
+      <div>
+        <h2>片仮名&mdash;katakana</h2>
+        <p>Learn the syllabary used for foreign words</p>
+      </div>   
+      <a class="btn" routerLink="/katakana">Start Learning</a>
+    </article>
+
+    <article class="sm:border-y-2">
+      <div>
+        <h2>漢字&mdash;kanji</h2>
+        <p>Explore the fascinating world of Japanese characters</p>
+      </div>
+      <a class="btn">Start Learning</a>
+    </article>
+  </section>
+
+  <section class="secondarySection">
+    <div class="wordOfTheDay">
+        <h2>Word of the Day</h2>
+        <h3>桜&mdash;さくら</h3>
+        <h4>sakura</h4>
+        <p>Cherry blossom; a symbol of spring and renewal in Japan</p>
+    </div>
+    
+    <div class="training">
+      <div>
+          <h2>Training</h2>
+          <h3>仮名&mdash;kana</h3> 
+      </div>
+      <button class="btn" (click)="toggleMenu()">Start Exercise</button>
+    </div>
+  </section>
+
+  
+    @if (showMenu) {
+        <section class="trainingMenu">
+            <article>
+                <button class="closeMenu" (click)="closeMenu()"><x-icon/></button>
+                <div class="trainingCover"></div>
+
+                <div class="middlePart">
+                    <div class="randomKana" *ngIf="trainingSteps() !== 10">
+                        {{ randomKana }}
+                    </div>
+            
+                    <div class="choices" *ngIf="trainingSteps() !== 10">
+                        <button id="{{choice}}" [ngClass]="myChoice" *ngFor="let choice of choices" class="btn" (click)="clickKana(choice)">{{ choice }}</button>
+                    </div>
+            
+                    <div class="answers">
+                        <p *ngIf="trainingSteps() === 10 && correctAns > 5">Congratulations, you got {{ correctAns }} / 10. 凄い～！</p>
+                        <p *ngIf="trainingSteps() === 10 && correctAns <= 5">You got {{ correctAns }} / 10, you can do better. 頑張れ！</p>
+                        <button class="btn" *ngIf="trainingSteps() === 10" (click)="startAgain()">Start again</button>
+                    </div>
+                </div>
+
+                <div class="trainingCover"></div>
+            </article>
+        </section>
+    }
+</main>

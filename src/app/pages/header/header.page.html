@@ -1,0 +1,27 @@
+<header>
+    <a routerLink="/" class="home">
+        <h1>学</h1>
+        <p>narau</p>
+    </a>
+
+    <nav class="desktop-navbar">
+        <a href="" class="navLink" [ngClass]="{'font-semibold': title() === 'started'}">Get Started</a>
+        <a href="" class="navLink" [ngClass]="{'font-semibold': title() === 'vocabulary'}">Vocabulary</a>
+        <a href="" class="navLink" [ngClass]="{'font-semibold': title() === 'grammar'}">Grammar</a>
+        <a href="" class="navLink" [ngClass]="{'font-semibold': title() === 'exo'}">Exercises</a>
+    </nav>
+
+    <section class="mobile-navbar">
+        <button class="open-menu" (click)="showMenu = true"><menu-icon></menu-icon></button>
+        <nav *ngIf="showMenu === true">
+            <button class="close-menu" (click)="showMenu = false"><x-icon></x-icon></button>
+            <div>
+                <a href="" class="navLink" [ngClass]="{'font-semibold': title() === 'started'}">Get Started</a>
+                <a href="" class="navLink" [ngClass]="{'font-semibold': title() === 'vocabulary'}">Vocabulary</a>
+                <a href="" class="navLink" [ngClass]="{'font-semibold': title() === 'grammar'}">Grammar</a>
+                <a href="" class="navLink" [ngClass]="{'font-semibold': title() === 'exo'}">Exercises</a>
+            </div>
+        </nav>
+    </section>
+</header>
+<router-outlet></router-outlet>
